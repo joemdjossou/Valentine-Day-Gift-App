@@ -272,14 +272,17 @@ Future<List<String>> analyzeCuteMessages(String chatMessages) async {
           if (hour >= 23 || hour <= 6) score += 1;
 
           // Good morning messages (7-9 AM)
-          if (hour >= 7 && hour <= 9 && messageLower.contains('morning'))
+          if (hour >= 7 && hour <= 9 && messageLower.contains('morning')) {
             score += 2;
+          }
 
           // Good night messages (9-11 PM)
           if (hour >= 21 &&
               hour <= 23 &&
               (messageLower.contains('night') ||
-                  messageLower.contains('sleep'))) score += 2;
+                  messageLower.contains('sleep'))) {
+            score += 2;
+          }
         } catch (e) {
           debugPrint('Error parsing timestamp: $timestamp');
         }

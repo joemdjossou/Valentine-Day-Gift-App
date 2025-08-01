@@ -145,7 +145,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           //   ],
           // ),
           image: DecorationImage(
-            image: AssetImage("assets/images/bg.png"),
+            image: AssetImage("assets/images/bg_leaf.png"),
             fit: BoxFit.cover,
             opacity: 0.4,
           ),
@@ -159,7 +159,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                   image: DecorationImage(
                     image: AssetImage("assets/images/bg.png"),
                     fit: BoxFit.cover,
-                    opacity: 0.1,
+                    opacity: 0,
                   ),
                 ),
               ),
@@ -197,11 +197,11 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                             child: Container(
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: Colors.white.withOpacity(0.8),
+                                color: Colors.white.withValues(alpha: 0.8),
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.1),
+                                    color: Colors.black.withValues(alpha: 0.1),
                                     blurRadius: 8,
                                     offset: const Offset(0, 2),
                                   ),
@@ -220,10 +220,10 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 8),
                               decoration: BoxDecoration(
-                                color: textColor.withOpacity(0.1),
+                                color: textColor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(
-                                  color: textColor.withOpacity(0.3),
+                                  color: textColor.withValues(alpha: 0.3),
                                   width: 1,
                                 ),
                               ),
@@ -310,15 +310,17 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                                         .height *
                                                     0.6,
                                                 decoration: BoxDecoration(
-                                                  color: Colors.white
-                                                      .withOpacity(
-                                                          0.7 - (i * 0.1)),
+                                                  color: Colors.red.shade50
+                                                      .withValues(
+                                                          alpha:
+                                                              0.7 - (i * 0.1)),
                                                   borderRadius:
                                                       BorderRadius.circular(12),
                                                   boxShadow: [
                                                     BoxShadow(
                                                       color: Colors.black
-                                                          .withOpacity(0.1),
+                                                          .withValues(
+                                                              alpha: 0.1),
                                                       blurRadius:
                                                           10 + (i * 2.0),
                                                       offset: Offset(
@@ -354,14 +356,15 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                                           .height *
                                                       0.6,
                                                   decoration: BoxDecoration(
-                                                    color: Colors.white,
+                                                    color: Colors.red.shade50,
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             12),
                                                     boxShadow: [
                                                       BoxShadow(
                                                         color: Colors.black
-                                                            .withOpacity(0.15),
+                                                            .withValues(
+                                                                alpha: 0.15),
                                                         blurRadius: 20,
                                                         offset:
                                                             const Offset(0, 8),
@@ -385,8 +388,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                                               end: Alignment
                                                                   .bottomRight,
                                                               colors: [
-                                                                Colors.white,
-                                                                Colors.grey
+                                                                Colors.red
+                                                                    .shade100,
+                                                                Colors.red
                                                                     .shade50,
                                                               ],
                                                             ),
@@ -412,8 +416,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: textColor
-                                                                      .withOpacity(
-                                                                          0.1),
+                                                                      .withValues(
+                                                                          alpha:
+                                                                              0.1),
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
@@ -547,7 +552,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                             Text(
                               "← Swipe to browse love letters →",
                               style: TextStyle(
-                                color: textColor.withOpacity(0.7),
+                                color: textColor.withValues(alpha: 0.7),
                                 fontSize: 14,
                                 fontStyle: FontStyle.italic,
                               ),
@@ -571,13 +576,14 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     ),
                                     decoration: BoxDecoration(
                                       color: currentMessageIndex > 0
-                                          ? textColor.withOpacity(0.1)
-                                          : Colors.grey.withOpacity(0.1),
+                                          ? textColor.withValues(alpha: 0.1)
+                                          : Colors.grey.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(25),
                                       border: Border.all(
                                         color: currentMessageIndex > 0
-                                            ? textColor.withOpacity(0.3)
-                                            : Colors.grey.withOpacity(0.3),
+                                            ? textColor.withValues(alpha: 0.3)
+                                            : Colors.grey
+                                                .withValues(alpha: 0.3),
                                       ),
                                     ),
                                     child: Row(
@@ -619,14 +625,15 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                                     decoration: BoxDecoration(
                                       color: currentMessageIndex <
                                               allMessages.length - 1
-                                          ? textColor.withOpacity(0.1)
-                                          : Colors.grey.withOpacity(0.1),
+                                          ? textColor.withValues(alpha: 0.1)
+                                          : Colors.grey.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(25),
                                       border: Border.all(
                                         color: currentMessageIndex <
                                                 allMessages.length - 1
-                                            ? textColor.withOpacity(0.3)
-                                            : Colors.grey.withOpacity(0.3),
+                                            ? textColor.withValues(alpha: 0.3)
+                                            : Colors.grey
+                                                .withValues(alpha: 0.3),
                                       ),
                                     ),
                                     child: Row(
